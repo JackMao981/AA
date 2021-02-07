@@ -5,6 +5,7 @@
 # c: the optimization equation that we want to MAXIMIZE, and add filler 0's for the slack variables
 # A: the coefficients to all of the variables and the slack variables
 # b: the right hand side of the inequalities, ie the constants
+import numpy as np
 def simplex(c, A, b):
     # First step in simplex, which is to convert our
     # inputs into the tableau.
@@ -30,7 +31,7 @@ def initialTableau(c, A, b):
 
 def primalSolution(tableau):
    # the pivot columns denote which variables are used
-    columns = transpose(tableau)
+    columns = np.transpose(tableau)
     indices = [j for j, col in enumerate(columns[:-1]) if isPivotCol(col)]
     return list(zip(indices, columns[-1]))
 
