@@ -75,6 +75,11 @@ def pivotAbout(tableau, pivot):
             pivotRowMultiple = [y * tableau[k][j] for y in tableau[i]]
             tableau[k] = [x - y for x,y in zip(tableau[k], pivotRowMultiple)]
 # This is the problem ninjas want me to solve
+# The output is ([(0, 0.5), (2, 4.0), (3, 7.5)], 62.0)
+# primal solutions are the list of the tuples.
+# the first value corresponds to the column/variable while the second value represents its value 
+# 62.0 is the objective values
+
 c = [8,-6,4,0,0,0]
 b = [12,20,15]
 A = [[1,1,1,1,0,0], [5,4,0,0,1,0],[0,9,2,0,0,1]]
