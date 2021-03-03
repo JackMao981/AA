@@ -135,7 +135,7 @@ cnf3 = CNF([c4],[x])
 cnf4 = CNF([],[x,y,z])
 
 # Test cnfs against the dpll algorithm
-print(dpll(cnf1))
-print(dpll(cnf2))
-print(dpll(cnf3))
-print(dpll(cnf4))
+print(dpll(cnf1)) #true
+print(dpll(cnf2)) #false
+print(dpll(cnf3)) #false
+print(dpll(cnf4)) #true
