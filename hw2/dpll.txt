@@ -1,0 +1,27 @@
+DPLL Algorithm
+The DPLL algorithm is a back-tracking searching algorithm for solving
+CNF SAT problems. The algorithm takes in a set of clauses and returns a bool.
+
+Pseudocode
+
+bool dpll(C):
+  if (C is empty):
+    return True
+  while(there is a unit clause or literal p):
+    if(p and not p are in C):
+      return False
+    else:
+      C = Simplify (C, p)
+  if(C is empty):
+    return True
+
+  pick p from shortest clause in C
+  if(dpll(Simplify(C,p))):
+    return True
+  else:
+    return dpll(Simplify(C, not p))
+
+clause Simplify(C,p):
+    delete every clause/literal in S containing p;
+    delete every occurrence in S of ~p;
+    return(S);
